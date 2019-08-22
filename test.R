@@ -1,7 +1,11 @@
 start = Sys.time()
-source("/home/studio/qc.R")
-source("/home/studio/scMerge.R")
-source("/home/studio/downstream.R")
+knitr::purl("/home/rstudio/qc.Rmd")
+knitr::purl("/home/rstudio/scMerge.Rmd")
+knitr::purl("/home/rstudio/downstream.Rmd")
+
+source("/home/rstudio/qc.R")
+source("/home/rstudio/scMerge.R")
+source("/home/rstudio/downstream.R")
 end = Sys.time()
 
-print(start - end)
+print(end - start)
