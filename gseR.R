@@ -9,7 +9,7 @@ gce_global_zone(zone)
 # gce_list_zones(project)
 # gce_list_machinetype()$items
 
-(tag = gce_tag_container("singlecellplus_docker"))
+(tag = gce_tag_container("scp_docker"))
 
 vm <- gce_vm(template = "rstudio", 
              name = "singlecellplus1", 
