@@ -13,21 +13,20 @@ ADD setup.R /home/
 ADD internal_test.R /home/
 ADD user_test.R /home/
 
-RUN cd /home/
-RUN git clone https://github.com/SydneyBioX/SingleCellPlus
-RUN ls /home/
-RUN cp -r /home/SingleCellPlus/ /home/rstudio/
+# Make a tmp folder and copy all files into /home/rstudio/ which is shared by everyone.
+RUN mkdir /home/tmp/
+RUN git clone https://github.com/SydneyBioX/SingleCellPlus /home/tmp/
+RUN cp -r /home/tmp/* /home/rstudio/
+# We will remove these data since we will have another copy from Google Cloud Storage
 RUN rm -rf /home/rstudio/data/
-RUN rm -rf /home/SingleCellPlus/
+RUN ls /home/
+RUN ls /home/rstudio/
 
+
+# wget large data files from Google Cloud Storage
 RUN wget https://storage.googleapis.com/scp_data/data.zip -P /home/rstudio/
 RUN cd /home/rstudio/ && unzip data.zip
 RUN rm -rf /home/rstudio/data.zip
-
-#RUN cp ./SingleCellPlus/qc.Rmd /home/rstudio/
-#RUN cp ./SingleCellPlus/scMerge.Rmd /home/rstudio/
-#RUN cp ./SingleCellPlus/downstream.Rmd /home/rstudio/
-#RUN rm -rf /home/rstudio/SingleCellPlus
 RUN ls /home/
 RUN ls /home/rstudio/
 
