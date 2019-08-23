@@ -13,17 +13,23 @@ ADD setup.R /home/
 ADD internal_test.R /home/
 ADD user_test.R /home/
 
+RUN cd /home/
+RUN git clone https://github.com/SydneyBioX/SingleCellPlus
+RUN cp -r /home/SingleCellPlus /home/rstudio/
+RUN rm -rf /home/rstudio/data/
+RUN rm -rf /home/SingleCellPlus/
 
 RUN wget https://storage.googleapis.com/scp_data/data.zip -P /home/rstudio/
 RUN cd /home/rstudio/ && unzip data.zip
 RUN rm -rf /home/rstudio/data.zip
-RUN git clone https://github.com/SydneyBioX/SingleCellPlus
-RUN cp ./SingleCellPlus/qc.Rmd /home/rstudio/
-RUN cp ./SingleCellPlus/scMerge.Rmd /home/rstudio/
-RUN cp ./SingleCellPlus/downstream.Rmd /home/rstudio/
-RUN rm -rf /home/rstudio/SingleCellPlus
+
+#RUN cp ./SingleCellPlus/qc.Rmd /home/rstudio/
+#RUN cp ./SingleCellPlus/scMerge.Rmd /home/rstudio/
+#RUN cp ./SingleCellPlus/downstream.Rmd /home/rstudio/
+#RUN rm -rf /home/rstudio/SingleCellPlus
+RUN ls /home/
 RUN ls /home/rstudio/
 
-RUN R -f /home/install.R
-RUN ls /home/rstudio/
-RUN R -f /home/internal_test.R
+#RUN R -f /home/install.R
+#RUN ls /home/rstudio/
+#RUN R -f /home/internal_test.R
