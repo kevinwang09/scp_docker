@@ -15,6 +15,7 @@ ADD user_test.R /home/
 
 RUN cd /home/
 RUN git clone https://github.com/SydneyBioX/SingleCellPlus
+RUN ls /home/
 RUN cp -r /home/SingleCellPlus/ /home/rstudio/
 RUN rm -rf /home/rstudio/data/
 RUN rm -rf /home/SingleCellPlus/
