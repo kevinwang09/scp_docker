@@ -9,6 +9,7 @@ FROM bioconductor/release_core2
 MAINTAINER kevin.wang@sydney.edu.au
 
 ADD install.R /home/
+ADD setup.R /home/
 
 
 RUN wget https://storage.googleapis.com/scp_data/data.zip -P /home/rstudio/
