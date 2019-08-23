@@ -3,6 +3,9 @@ knitr::purl("/home/rstudio/qc.Rmd")
 knitr::purl("/home/rstudio/scMerge.Rmd")
 knitr::purl("/home/rstudio/downstream.Rmd")
 
+list.files("/home/rstudio/")
+list.files("/home/rstudio/data")
+
 source("/home/rstudio/qc.R")
 source("/home/rstudio/scMerge.R")
 source("/home/rstudio/downstream.R")
