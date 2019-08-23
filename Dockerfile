@@ -10,6 +10,8 @@ MAINTAINER kevin.wang@sydney.edu.au
 
 ADD install.R /home/
 ADD setup.R /home/
+ADD internal_test.R /home/
+ADD user_test.R /home/
 
 
 RUN wget https://storage.googleapis.com/scp_data/data.zip -P /home/rstudio/
@@ -23,5 +25,5 @@ RUN rm -rf /home/rstudio/SingleCellPlus
 RUN ls /home/rstudio/
 
 RUN R -f /home/install.R
-ADD test.R /home/rstudio
 RUN ls /home/rstudio/
+RUN R -f /home/internal_test.R
