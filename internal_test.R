@@ -1,8 +1,8 @@
 start = Sys.time()
 setwd("/home/rstudio/")
-knitr::purl("/home/rstudio/qc.Rmd", output = "/home/rstudio/")
-knitr::purl("/home/rstudio/scMerge.Rmd", output = "/home/rstudio/")
-knitr::purl("/home/rstudio/downstream.Rmd", output = "/home/rstudio/")
+knitr::purl("/home/rstudio/qc.Rmd", output = "/home/rstudio/qc.R")
+knitr::purl("/home/rstudio/scMerge.Rmd", output = "/home/rstudio/scMerge.R")
+knitr::purl("/home/rstudio/downstream.Rmd", output = "/home/rstudio/downstream.R")
 
 list.files("/home/rstudio/")
 
