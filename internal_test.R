@@ -6,9 +6,9 @@ knitr::purl("/home/rstudio/downstream.Rmd", output = "/home/rstudio/downstream.R
 
 list.files("/home/rstudio/")
 
-source("/home/rstudio/qc.R")
-source("/home/rstudio/scMerge.R")
-source("/home/rstudio/downstream.R")
+# source("/home/rstudio/qc.R")
+# source("/home/rstudio/scMerge.R")
+# source("/home/rstudio/downstream.R")
 
 # rmarkdown::render("/home/rstudio/qc.Rmd")
 # rmarkdown::render("/home/rstudio/scMerge.Rmd")
