@@ -20,9 +20,7 @@ RUN mkdir /home/SingleCellPlus/
 RUN cp -r /home/tmp/* /home/SingleCellPlus/
 # We will remove these data since we will have another copy from Google Cloud Storage
 RUN ls /home/
-RUN ls /home/tmp/
 RUN ls /home/SingleCellPlus/
-RUN ls /home/rstudio/
 
 
 
@@ -30,10 +28,7 @@ RUN ls /home/rstudio/
 RUN wget https://storage.googleapis.com/scp_data/data.zip -P /home/
 RUN cd /home/ && unzip ./data.zip
 RUN ls /home/
-RUN ls /home/tmp/
 RUN ls /home/SingleCellPlus/
-RUN ls /home/rstudio/
 
 
-# RUN R -f /home/install.R
-# RUN ls /home/rstudio/
+RUN R -f /home/install.R
