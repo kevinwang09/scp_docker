@@ -1,2 +1,1 @@
-system("git clone https://github.com/SydneyBioX/SingleCellPlus")
-setwd("./SingleCellPlus")
+system(paste0("cp -r /home/SingleCellPlus/* ", getwd()))
