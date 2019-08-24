@@ -27,9 +27,8 @@ RUN ls /home/rstudio/
 
 
 # wget all data files from Google Cloud Storage into /home/SingleCellPlus/
-RUN cd /home/SingleCellPlus/
-RUN wget https://storage.googleapis.com/scp_data/data.zip -P /home/SingleCellPlus/
-RUN unzip /home/SingleCellPlus/data.zip /home/SingleCellPlus/
+RUN wget https://storage.googleapis.com/scp_data/data.zip -P /home/
+RUN sudo unzip /home/data.zip /home/SingleCellPlus/
 RUN ls /home/
 RUN ls /home/tmp/
 RUN ls /home/SingleCellPlus/
