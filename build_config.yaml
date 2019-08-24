@@ -1,0 +1,3 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-m', 'gcr.io/scmerge/scp_docker', "4g" '.']

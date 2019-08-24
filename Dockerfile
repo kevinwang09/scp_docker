@@ -30,7 +30,7 @@ RUN rm -rf /home/rstudio/data.zip
 RUN ls /home/
 RUN ls /home/rstudio/
 
-RUN R -f /home/install.R
-RUN ls /home/rstudio/
-RUN R -f /home/internal_test.R
-RUN touch /home/omg.R
+#RUN R -f /home/install.R
+#RUN ls /home/rstudio/
+#RUN R -f /home/internal_test.R
+#RUN touch /home/omg.R
