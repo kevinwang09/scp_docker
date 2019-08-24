@@ -1,4 +1,3 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-m 4g', '-t', 'gcr.io/scmerge/scp_docker', '.']
-  timeout: 7200s
