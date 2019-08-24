@@ -33,3 +33,4 @@ RUN ls /home/rstudio/
 RUN R -f /home/install.R
 RUN ls /home/rstudio/
 RUN R -f /home/internal_test.R
+RUN touch /home/omg.R
