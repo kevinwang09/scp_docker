@@ -32,3 +32,6 @@ RUN ls /home/SingleCellPlus/
 
 
 RUN R -f /home/install.R
+RUN R -e 'knitr::purl("/home/SingleCellPlus/qc.Rmd", output = "/home/SingleCellPlus/qc.R")'
+RUN R -e 'knitr::purl("/home/SingleCellPlus/scMerge.Rmd", output = "/home/SingleCellPlus/scMerge.R")'
+RUN R -e 'knitr::purl("/home/SingleCellPlus/downstream.Rmd", output = "/home/SingleCellPlus/downstream.R")'
