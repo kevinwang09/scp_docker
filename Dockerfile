@@ -11,6 +11,7 @@ MAINTAINER kevin.wang@sydney.edu.au
 ADD install.R /home/
 ADD setup.R /home/
 ADD user_test.R /home/
+ADD internal_test.R /home/
 
 # Make a tmp folder and git clone
 # All git files will then be copied to /home/SingleCellPlus/
@@ -31,7 +32,9 @@ RUN ls /home/
 RUN ls /home/SingleCellPlus/
 
 
+# Running tests
 RUN R -f /home/install.R
 RUN R -e 'knitr::purl("/home/SingleCellPlus/qc.Rmd", output = "/home/SingleCellPlus/qc.R")'
 RUN R -e 'knitr::purl("/home/SingleCellPlus/scMerge.Rmd", output = "/home/SingleCellPlus/scMerge.R")'
 RUN R -e 'knitr::purl("/home/SingleCellPlus/downstream.Rmd", output = "/home/SingleCellPlus/downstream.R")'
+RUN R -f /home/internal_test.R
