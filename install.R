@@ -22,7 +22,8 @@ builtins <- c(
 	"scales", "scater", 
 	"scran", "tidyverse", 
 	"viridis", "monocle",
-	"kevinwang09/scdney")
+	"DescTools",
+	"SydneyBioX/scdney")
 
 for (builtin in builtins)
     if (!suppressWarnings(require(builtin, character.only=TRUE)))
