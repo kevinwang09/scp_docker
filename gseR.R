@@ -9,7 +9,7 @@ gce_global_zone(zone)
 # gce_list_zones(project)
 # gce_list_machinetype()$items
 
-(tag = gce_tag_container("scp_docker:cbd49d9"))
+(tag = gce_tag_container("scp_docker:647c179"))
 
 vm <- gce_vm(template = "rstudio", 
              name = "singlecellplus1", 
@@ -35,7 +35,7 @@ purrr::map(.x = names$Username,
 # 
 # purrr::map(.x = userGroups$`1`, 
 #            .f = ~ gce_rstudio_adduser(instance = vm, username = .x, password = .x))
-# gce_rstudio_adduser(instance = vm, username = "kevin", password = "kevin")
+# gce_rstudio_adduser(instance = vm, username = "kevin2", password = "kevin2")
 ##################################################
 ################################################################################################
 zone = "asia-northeast1-a" ## Tokyo server
