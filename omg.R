@@ -11,11 +11,11 @@ if (interactive() ){
   nuke <- readline(prompt = "Enter 'Yes' only if you saved your changed file as a different name (e.g. 'qc.Rmd' is now 'qc_myname.Rmd'):  ")
  if(nuke == "Yes"){system(paste0("cp -r /home/tmp/* ", getwd()))}
   rm(nuke)
+  
+  download.file(url = "https://i.imgur.com/e0u37lt.jpg", 
+                destfile = paste0(getwd(), "/angry_cat.jpg"))
+  browseURL(paste0(getwd(), "/angry_cat.jpg"))
 }
-
-download.file(url = "https://i.imgur.com/e0u37lt.jpg", 
-              destfile = paste0(getwd(), "/angry_cat.jpg"))
-browseURL(paste0(getwd(), "/angry_cat.jpg"))
 
 # system("sudo apt-get -y install libjpeg-dev")
 # system("sudo apt-get -y install libcairo2-dev")
