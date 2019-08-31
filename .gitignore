@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
+names.csv
+password_print.Rmd
