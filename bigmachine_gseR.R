@@ -13,7 +13,7 @@ gce_global_zone(zone)
 
 vm <- gce_vm(template = "rstudio", 
              name = "singlecellplus1",
-             disk_size_gb = 50,
+             disk_size_gb = 100,
              predefined_type = "n1-standard-16",
              dynamic_image = tag,
              user = "rstudio", 
@@ -29,33 +29,24 @@ vm <- gce_ssh_setup(vm,
 ##################################################
 
 names = readr::read_csv("names.csv")
-set.seed(1234)
-library(dplyr)
-names$Password = replicate(n = nrow(names), expr = {sample(0:9, 4, replace = TRUE) %>% paste(collapse = "")}, simplify = FALSE) %>% as.character()
 purrr::map2(.x = names$Username,
            .y = names$Password,
            .f = ~ gce_rstudio_adduser(instance = vm2, username = .x, password = .y))
 
-# userGroups = split(names$Username, f = rep(1:2, length.out = nrow(names)))
-# 
-# purrr::map(.x = userGroups$`1`, 
-#            .f = ~ gce_rstudio_adduser(instance = vm, username = .x, password = .x))
-# gce_rstudio_adduser(instance = vm2, username = "kevin", password = "kevin")
-##################################################
 ################################################################################################
-zone = "asia-northeast1-a" ## Tokyo server
-gce_global_project(project)
-gce_global_zone(zone)
-vm2 <- gce_vm(template = "rstudio", 
-             name = "singlecellplus2", 
-             predefined_type = "n1-highmem-16",
-             dynamic_image = tag,
-             user = "rstudio", 
-             password = "pushu")
-vm2 <- gce_ssh_setup(vm2,
-                    username = "rstudio",
-                    key.pub = "~/.ssh/id_rsa.pub",
-                    key.private = "~/.ssh/id_rsa")
+# zone = "asia-northeast1-a" ## Tokyo server
+# gce_global_project(project)
+# gce_global_zone(zone)
+# vm2 <- gce_vm(template = "rstudio", 
+#              name = "singlecellplus2", 
+#              predefined_type = "n1-highmem-16",
+#              dynamic_image = tag,
+#              user = "rstudio", 
+#              password = "pushu")
+# vm2 <- gce_ssh_setup(vm2,
+#                     username = "rstudio",
+#                     key.pub = "~/.ssh/id_rsa.pub",
+#                     key.private = "~/.ssh/id_rsa")
 
 # purrr::map(.x = userGroups$`2`, 
 #            .f = ~ gce_rstudio_adduser(instance = vm2, username = .x, password = .x))
